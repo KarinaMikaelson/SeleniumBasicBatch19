@@ -1,0 +1,38 @@
+Instance of WebDriver:
+        WebDriver driver = new ChromeDriver();
+
+Open the Chrome browser and navigate to url:
+        driver.get("https://syntaxprojects.com/");
+
+maximize the window
+        driver.manage().window().maximize();
+
+enter the full screen mode
+        driver.manage().window().fullscreen();
+
+get the title of the page that you are currently on
+        driver.getTitle();
+        String title = driver.getTitle();
+When you want the screen to shut
+        Thread.sleep(2000); - is to slow down the process
+        driver.quit(); - closes all windows
+        driver.close();  - closes only current window
+-------------------------------------------------------
+Navigational Commands:
+       driver.get(url);
+           1. It doesnt keep any history, you cant go back or forward
+           2. Waits for the webpage to completely load before going to the next command
+
+       driver.navigate().to(url);
+            1. It keeps history and allows you to go back and forward
+            2. Doesn't wait for the webpage to load before going to the next command
+
+----------------------------------------------------------
+
+WebElement - anything that we see on the webpage
+
+<html>                               // <- Parent (opening and closing of html)
+      <body>                         //<- Child
+         
+      </body>
+</html>

@@ -1,0 +1,10 @@
+
+Locators in Selenium:
+    1. id                // better to use if present
+    2. name
+    3. class             // avoid using if there is numbers and spaces
+    4. linkText
+    5. partialLinkText
+    6. tagName
+    7. xpath
+    8. css
