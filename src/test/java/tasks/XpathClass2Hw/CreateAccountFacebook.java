@@ -1,4 +1,4 @@
-package tasks;
+package tasks.XpathClass2Hw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -58,6 +58,5 @@ public class CreateAccountFacebook {
         clickSignUp.click();
         Thread.sleep(1000);
         driver.close();
-
     }
 }

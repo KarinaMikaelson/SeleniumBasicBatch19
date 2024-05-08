@@ -1,0 +1,45 @@
+Locators:
+        Locators in Selenium:
+            1. id                // better to use if present
+            2. name
+            3. class             // avoid using if there is numbers and spaces
+            4. linkText
+            5. partialLinkText
+            6. tagName
+            7. xpath
+            8. css
+
+Xpath:
+        Attribute:       //tagName[@attribute='value']
+        Text:            //tagName[text()='text']
+        Partial Values:  //tagName[contains(text(),'partial text')]
+                     //tagName[contains(@attribute,'partial attribute value')]
+        Starts-with:     //tagName[starts-with(@attribute,'starting attribute value')]
+        Operators:       //tagName[@attribute, value' and @attribute, value']
+                  Note. If more than one xpath found, use indexing:
+                         (//input[@class='form-control backup'])[2]
+
+                      Absolute xpath (try to avoid, it's lengthy):
+                                   Begins from the root of the HTML document and specifies the complete path to the element
+                                Example: /html/div/div/form/button
+                                         /html/body/div[2]/div/div[2]/div/div[2]/form/div/div/input
+
+                      Relative xpath:
+                                    Description:
+                                Example: <button id="troy" >abc</button> - //button[@id]='troy']  - Can only be converted if contains text
+                                         //button[@id]='troy']  - Can only be converted if contains text
+                                 Example 2: (//input[@class='form-control backup'])[2]
+                                         If more than one xpath found, use indexing
+
+Advance Xpath:
+        Steps:
+                 1. Find an element in the nearest neighbourhood that u can access uniquely
+                 2. Mention the relation between the found element and the other desired
+                 3.
+
+
+
+                        //input[@id='hello']/following-sibling::input[2]
+
+CSS:
+        input#profileBox  -  shortcut

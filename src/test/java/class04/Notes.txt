@@ -1,0 +1,7 @@
+1. RadioButton
+2. CheckBox
+
+isEnabled(); - The isEnabled() method is a method in Selenium WebDriver that checks if a web element, such as a radio button, checkbox, or button, is enabled or not. This method returns a boolean value, True if the element is enabled and False if it is disabled.
+isSelected(); - The isSelected() method is a method in Selenium WebDriver that checks if a web element, such as a radio button, checkbox, or dropdown option, is currently selected or not. This method returns a boolean value, True if the element is selected and False if it is not selected.
+isDisplayed(); - The isDisplayed() method is a method in Selenium WebDriver that checks if a web element, such as a radio button, checkbox, or button, is displayed on the web page or not.
+get.Attribute(); - get attribute value
