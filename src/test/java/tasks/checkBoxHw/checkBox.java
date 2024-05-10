@@ -13,20 +13,40 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 public class checkBox {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://syntaxprojects.com/basic-checkbox-demo.php");
 
-        WebElement disabledCheckbox= driver.findElement(By.xpath("//button[@id='enabledcheckbox']"));
-        disabledCheckbox.click();
+        //Single Checkbox Demo
+        WebElement checkBox1 = driver.findElement(By.xpath("//input[@id='isAgeSelected']"));
+        checkBox1.click();
+        Thread.sleep(500);
 
-        List<WebElement> checkBoxes=driver.findElements(By.xpath("//input[@class='checkbox-field']"));
-        for (WebElement checkBox: checkBoxes){
-            String value = checkBox.getAttribute("value");
+        //Multiple Checkbox Demo: click on all checkBoxes
+        List<WebElement> checkBoxes = driver.findElements(By.xpath("//input[@class='cb1-element']"));
+        for(WebElement checkBox:checkBoxes){
+            checkBox.click();
+        }
+        Thread.sleep(500);
+
+
+
+        // Disabled Checkbox Demo: enable
+        WebElement enableCheckboxes= driver.findElement(By.xpath("//button[@id='enabledcheckbox']"));
+        enableCheckboxes.click();
+        Thread.sleep(500);
+
+        // click on ONE checkBox
+        List<WebElement> c3 =driver.findElements(By.xpath("//input[@class='checkbox-field']"));
+        for (WebElement c1: c3){
+            String value = c1.getAttribute("value");
             if(value.equalsIgnoreCase("Checkbox-4")){
-                checkBox.click();
+                c1.click();
             }
         }
+        Thread.sleep(500);
+
+        driver.quit();
     }
 }
