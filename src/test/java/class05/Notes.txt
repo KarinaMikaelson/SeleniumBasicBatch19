@@ -1,0 +1,46 @@
+CommonMethods STEPS:
+              1. Create a config.properties file
+                 Store it's (changeable) properties
+                    Example:
+                        userName=Admin
+                        password=Hum@nhrm123
+                        url=http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/dashboard
+                        browser=Chrome
+
+              2. Create a Constants Class in "utils" to store the path to the config.properties:
+                    Example:
+                        public static final String CONFIG_FILE_PATH = System.getProperty("user.dir")+"/src/test/resources/config/config.properties";
+
+              3. Create a "ConfigReader" Class:
+                    Example:
+
+                         public static String read(String key) throws IOException{
+                                 FileInputStream fis = new FileInputStream(Constants.CONFIG_FILE_PATH);
+                                 Properties properties = new Properties();
+                                 properties.load(fis);
+                                 return properties.getProperty(key);
+                             }
+
+              4. Create a "CommonMethods" class with a Common method in it.
+                    Example:
+
+                          public static WebDriver driver;
+                              public static void openBrowserAndLaunchApplication() throws IOException {
+
+                                  switch (ConfigReader.read("browser")){
+                                      case "Chrome":
+                                          driver = new ChromeDriver();
+                                          break;
+                                      case "FireFox":
+                                          driver = new FirefoxDriver();
+                                          break;
+                                      case "Edge":
+                                          driver = new EdgeDriver();
+                                          break;
+                                      default:
+                                          throw new RuntimeException("invalid Browser Name");
+                                  }
+                                  driver.manage().window().maximize();
+                                  driver.get(ConfigReader.read("url"));
+                              }
+                          }

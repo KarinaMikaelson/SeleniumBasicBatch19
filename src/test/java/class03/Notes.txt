@@ -43,3 +43,27 @@ Advance Xpath:
 
 CSS:
         input#profileBox  -  shortcut
+-------------------------------------------------------------------------------------
+
+ Syntax: for contains method for css
+        tagName [attribute *= 'partial attribute value']
+
+ CSS has some other amazing features to like
+          a.starts-with method in css:
+                   tagName [attribute ^= 'starting attribute value'] where ^ means starts with
+
+                   example: ‹input id="abra ca dabra hello" ‚email ="rote" />
+                   CSS using starts with method:
+
+                                input[id ^= 'abra ca dab' ]
+
+          b.ends-with method in css:
+                   § symbol represents ends-with method in css
+              Syntax:
+                   tagname [attribute $= 'ending attribute value']
+
+                   Example:
+                         ‹input id="abra ca dabra hello" ‚email ="rote" />
+
+                         write the CSS selector using ends with method:
+                               input [id $= 'hello']
