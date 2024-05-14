@@ -1,0 +1,129 @@
+Tab = Window
+         ---> WindowHandle ID , which can be found by Selenium
+                       Method - driver.getWindowHandles(); -> returns a set (go back)
+Alerts:
+         WebBased:
+                - we can handle them how we handle regular WebElements
+         WindowBased:
+                - cant be Handled using selenium
+         JavaScript:
+                - can be handled using alert interface
+                         How to deal with JavaScript alerts:
+                                     1. Switch the focus to the alert
+                                     2. Accept, Dismiss, sendText, or getText from the alert
+
+iFrame:
+        An inline frame is used to embed another document within the current HTML document.
+                  Example:
+                        <html><iframe><html> </html></iframe></html>
+ Nested iFrames:
+          Three methods to switch to particular iFrame:
+                          1. by index - driver.switchTo.frame(0);
+                          2. by name -  driver.switchTo.frame("name");
+                          3. by ID    - WebElement frame3 = driver.findElement(By.xpath("//iframe[@id='text']"));
+                                        driver.switchTo().frame(frame3);
+
+-------------------------------------------------------------------------
+** geeksForGeeks:**
+
+Alert:
+     - An Alert is nothing but a small message box that appears on the screen to give
+       some kind of information and give a warning for a potentially damaging operation
+       or permission to perform that operation.
+   Types:
+       1. Simple Alert: - The simple alert in selenium shows some information or warning on the window.
+       2. Prompt Alert: - The confirmation alert asks for the permission to do some type of operations.
+       3. Confirmation Alert: - Prompt Alert asks some input from the user.
+   How to Handle Alerts in Selenium?:
+                      1. void dismiss():
+                                   - The "void dismiss" method is used to click on the ‘Cancel’ button of the alert.
+                                             Example:
+                                                   driver.switchTo().alert().dismiss();
+                      2. void accept():
+                                   - The "void accept" method is used to click on the ‘OK’ button of the alert.
+                                             Example:
+                                                   driver.switchTo().alert().accept();
+                      3. String getText();
+                                   - The void accept method is used to capture the alert message..
+                                             Example:
+                                                   driver.switchTo().alert().getText();
+                      4. void sendKeys(String stringToSend):
+                                   - It is used to send some data to the prompt alert.
+                                             Example:
+                                                   driver.switchTo().alert().sendKeys("Text");
+   Example of Alert Handling Using Selenium:
+                                   1. Launch the web browser and open the webpage “https://demoqa.com/alerts“
+                                   2. Click on the confirmation alert button
+                                   3. Accept the alert
+                                   4. Click on the confirmation alert button again
+                                   5. Reject the alert
+
+   What are Popups in Selenium?:
+                       1. Switch to the Alert:
+                                  - Use driver.switchTo().alert(). This tells Selenium to focus on the alert instead of the main page.
+                       2. Interact with the Alert:
+                                  1. Get the text: Use alert.getText() to read the message displayed in the alert.
+                                  2. Accept the alert: Use alert.accept() to click the “OK” button (or equivalent).
+                                  3. Dismiss the alert: Use alert.dismiss() to click the “Cancel” button (or equivalent).
+                                  4. Enter text (for prompts): Use alert.sendKeys("text") to input text in prompts before accepting or dismissing.
+                           Example:
+                                  (in class06 -> GeekAlertHandling)
+
+   Handling Web Dialog Box/Popup Window using Selenium:
+                            1. Navigate to the webpage “https://demoqa.com/alerts“.
+                            2. Locate and click the button that triggers the alert dialog.
+                            3. Wait for the alert to be present using WebDriverWait.
+                            4. Switch to the alert and print its text.
+                            5. Accept the alert (click OK).
+                            6. Close the browser.
+                                 Example:
+                                      (class06-> GeekHandleWebDialogBox)
+
+
+
+--------------------------------------------------------------------------------------------------------
+iFrame:
+         - An HTML iframe is used to display a web page within a web page.
+         - The HTML <iframe> tag specifies an inline frame.
+         - An inline frame is used to embed another document within the current HTML document.
+                              Syntax:
+                                     <iframe src="url" title="description"></iframe>
+                              Example:
+                                     <html><iframe><html> </html></iframe></html>
+                   Tip:
+                        It is a good practice to always include a title attribute for the <iframe>.
+                        This is used by screen readers to read out what the content of the iframe is.
+-----------------------------------
+   Iframe - Set Height and Width:
+                   - Use the height and width attributes to specify the size of the iframe.
+                   - The height and width are specified in pixels by default:
+
+                              Example:
+                                     <iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"></iframe>
+
+                   - Or you can add the style attribute and use the CSS height and width properties:
+
+                              Example:
+                                     <iframe src="demo_iframe.htm" style="height:200px;width:300px;" title="Iframe Example"></iframe>
+-----------------------------------
+   Iframe - Remove the Border:
+                   - By default, an iframe has a border around it.
+                   - To remove the border, add the style attribute and use the CSS border property:
+                              Example:
+                                     <iframe src="demo_iframe.htm" style="border:none;" title="Iframe Example"></iframe>
+
+                   - With CSS, you can also change the size, style and color of the iframe's border:
+                              Example:
+                                     <iframe src="demo_iframe.htm" style="border:2px solid red;" title="Iframe Example"></iframe>
+-----------------------------------
+   Iframe - Target for a Link:
+                   - An iframe can be used as the target frame for a link.
+                   - The target attribute of the link must refer to the name attribute of the iframe:
+                              Example:
+                                     <iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+                                     <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+
+
+
+
+

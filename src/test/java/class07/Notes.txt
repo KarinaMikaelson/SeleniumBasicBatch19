@@ -1,0 +1,69 @@
+Synchronization and Waits in Selenium:
+
+We never use Thread.sleep(); to wait for the Elements
+We have Implicit Wait and Explicit Wait
+   Implicit Wait -->  sets a global timeout for all interactions with elements.
+                          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+   Explicit wait -->  waits for a specific condition before proceeding.
+
+
+
+
+
+
+
+
+---------------------------------------------------------GeeksForGeeks
+Synchronization and Waits in Selenium:
+      Synchronization:
+                 - When an action is to occur, it is expected that all components involved work together seamlessly.
+                 - This collaborative process among components is referred to as synchronization.
+                 - In Selenium, synchronization ensures that the code and applications execute in more efficiently
+                   to carry out the desired operation.
+
+           How to achieve synchronization in the Selenium Web driver?:
+                      - Managing synchronization in Selenium is vital to ensure alignment between our driver and the
+                        browser when engaging with web elements that might load at varying intervals.
+                      - There exist multiple methods to adeptly address synchronization.
+
+           Types of Synchronizations in Selenium:
+
+                          1. Thread.Sleep:
+                                      ---> lets you temporarily pause the current thread’s execution for a specified duration in milliseconds.
+                                           You can’t use a negative value as the argument for milliseconds;
+                                           if you do, it will result in an IllegalArgumentException being thrown.
+
+                          2. Explicit Waits:
+                                    ---> -  An explicit wait provides greater flexibility by enabling us to pause test execution until a particular condition is satisfied.
+                                         -  This condition, such as the existence or non-existence of an element, can be defined using the ExpectedConditions class.
+                                         -  If the condition isn’t met within the designated timeframe, an exception will be raised. Implicit waits are convenient for
+                                            basic scenarios, instructing the WebDriver to wait for a certain duration when locating elements.
+                                         -  However, they may lead to unnecessary waiting if elements appear sooner than expected.
+                                         -  In contrast, explicit waits offer better control by pausing the script until specific conditions are met.
+
+                          3. Implicit Wait:
+                                    ---> - An implicit wait instructs the Web Driver to patiently search the DOM for a specified duration when attempting to locate an element
+                                           or elements if they’re not readily accessible.
+                                         - By default, this duration is set to 0.
+                                         - Once configured, the implicit wait remains effective throughout the lifespan of the Web Driver object instance until it’s modified again.
+
+                          4. Fluent Wait:
+                                    ---> - Fluent Wait in Selenium sets the maximum duration for the Selenium WebDriver to wait until a specific condition (such as a web element) becomes visible.
+                                         - It also specifies how often WebDriver will check for the condition before raising an ‘ElementNotVisibleException‘.
+
+--------------------------------------------------------- Implicit Wait/ Explicit wait
+
+Explicit and implicit waits are both mechanisms used in test automation to manage the timing of interactions with elements on a webpage.
+           **Explicit Wait**:
+                      - This involves instructing the automation script to wait for a specific condition to be met before proceeding further in the script.
+                      - You specify the condition and the maximum amount of time to wait for it. Once the condition is met or the timeout expires, the script continues execution.
+                      - This gives more control and flexibility as you can wait for specific elements to be present, visible, clickable, etc.
+
+           **Implicit Wait**:
+                       - With implicit wait, you set a global timeout value that the automation framework will use throughout the entire script.
+                       - Whenever the script tries to interact with an element that is not immediately available, it will wait for the specified amount of time before throwing an exception.
+                       - This can be less precise because it applies to every element interaction, regardless of whether it's necessary.
+
+                    In summary, explicit waits offer more precise control over timing by waiting for specific conditions,
+                    while implicit waits apply a general wait time to all element interactions.
