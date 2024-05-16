@@ -1,0 +1,25 @@
+WebTables:
+         //table[@id='1']/tbody/tr[2]/td[2]
+
+         //table[@id='1']/tbody/tr[3]/td[2]
+
+         Task:
+         - that select all the table rows in the body
+         //table[@id='1']/tbody/tr    - all three will be found
+
+         - that selects all the cells in the body:
+         //table[@id='1']/tbody/td
+
+         get the column status
+                // statusCol = driver.findElement(By.xpath());
+
+                y = driver.findElement(By.xpath());
+                for(x:y){
+
+                if(x.getText().equals("in progress"){
+                sout(x)   // sout(count) - to get index print out
+                }
+                count++
+             }
+
+Dynamic Tables: - Web Table that changes
