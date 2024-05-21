@@ -1,0 +1,77 @@
+Class-10:
+1. Keys
+2. Action Class
+3. Drag and Drop
+4. Take Screenshot
+5. Uploading File
+6. JS Executor
+-----------------
+js click button:   ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
+js scrolldown:       ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+Keys:
+      - Whenever we want to simulate any key press operation from keyboard using selenium that can be done using the KEY Class
+          webElement.sendKeys(key.Enter);
+
+Take Screenshot:
+      -  TakesScreenshot ss = (TakeScreenshot)driver;
+             ss.getScreenshotAS(output.FILE);
+                Screenshot:    Byte OR File (we do File)
+      Steps:
+         1. screenshot = ss.getScreenshotAS(output.FILE);    --> data type -File
+            FileUtils.copyFile(screenshot,location in your computer)
+         NOTES:  1. save screenshot (the "screenshot" package was created in this project,
+                    and the screenshot was saved there.)
+                 2. we have to write what kind of format (png,pdf etc) we want
+
+JS Executor: - INTERFACE   ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+       - Allows to write code in Java script
+
+             Using Java Script Executor:
+                          1.  JavascriptExecutor js = (JavascriptExecutor)drive;
+                          2.  js.executeScript("");
+
+                 java script --->
+                             1. opening browser
+                             2. performing a click
+                             3. take screenshot
+                             4. scroll up
+                             5. scroll down
+                             6. changing the values of attribute (not in selenium)
+                             7. highlight element using boundary around it
+
+
+
+
+
+1. What is the recommended method to capture a screenshot using Webdriver?
+-PNG
+------------------------------------
+2. Which package is supported to take a screenshot?
+-import org.openqa.selenium.TakesScreenshot;
+------------------------------------
+3. which screenshot would be saved in jpeg format?
+-        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+         File test= new File("filPath/screenshot_"+timestamp()+".png"); FileUtils.copyFile(screenshot, test);
+------------------------------------
+4. how do we scroll in selenium?
+- ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+------------------------------------
+5. JavaScriptExecutor is an ______that helps to execute JavaScript through Selenium Webdriver
+- interface
+------------------------------------
+6. How to click on button element using JavaScriptExecutor
+-((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
+------------------------------------
+7. Can we upload /download file using selenium
+-  true
+------------------------------------
+8. How we can upload the file using selenium?
+   1. passing file path to send-key
+   2. using robot class
+   3. using autoit script
+------------------------------------
+9. Which events are handled by Actions class?
+- Mouse and KeyBoard
+------------------------------------
+10. Which is the syntax to create the actions class object?
+- Actions builder = new Actions(driver);

@@ -23,3 +23,24 @@ WebTables:
              }
 
 Dynamic Tables: - Web Table that changes
+-------------------------------------------Frpom the Class
+WebTables:
+        WebTables are elements on the webpage, which are constructed by having rows and columns
+
+Types of webTables:
+           1. Static webTables
+           2. dynamic webTables
+
+WebTables consist of different sections or parts:
+<table>
+      <thread>
+             <tr>
+                  <ths</th> ---> column data or heading
+             </tr>
+       <thread>
+       </tbody>
+             <tr>
+                  <td></td> ---> table data
+             </tr>
+       </tbody>
+</table>

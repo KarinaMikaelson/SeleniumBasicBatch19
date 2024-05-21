@@ -1,0 +1,12 @@
+
+
+Selenium:
+    switch/waits commands:
+                          1. Alerts
+                          2. Frames
+                          3. WindowHandles
+
+               Alerts:
+                        1. WebBased --> we handle them by inspection,just like any other webElement
+                        2. Window Based  --> we cannot
+                        3. Java Script

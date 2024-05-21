@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
@@ -77,8 +78,12 @@ public class Calendar {
 
 //----------------------------------------------- Type employee name
 
+        //WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+       // wait.until(ExpectedConditions.javaScriptThrowsNoExceptions()
         WebElement employeeName = driver.findElement(By.xpath("//input[@id='leaveList_txtEmployee_empName']"));//leaveList_txtEmployee_empName
         employeeName.click();
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        //wait.until(ExpectedConditions.e(By.xpath("")));
         employeeName.sendKeys("David");
 
 //----------------------------------------------- Select from the dropdown "IT Support
